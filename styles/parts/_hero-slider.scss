@@ -5,8 +5,23 @@
 }
 
 .swiper-slide {
-  height: 500px;
+  height: auto;
   overflow: hidden;
+  & .top-img-sp {
+    display: block;
+  }
+  & .top-img {
+    display: none;
+  }
+
+  @include mq(sm) {
+    & .top-img-sp {
+      display: none;
+    }
+    & .top-img {
+      display: block;
+    }
+  }
 
   & > img {
     width: 100%;
@@ -41,8 +56,8 @@
 
 .hero {
   overflow: hidden;
-  padding-top: $navHeight;
-  
+  position: relative;
+
   &__title {
     position: absolute;
     top: 50%;
@@ -86,6 +101,32 @@
     left: -8px;
     top: 11px;
     font-size: 1.2em;
+  }
+}
+
+.image-opacity {
+  position: absolute;
+  bottom: -0px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  & > img {
+    width: 100%;
+  }
+  & .top-op-sp {
+    display: block;
+  }
+  & .img-op {
+    display: none;
+  }
+
+  @include mq(sm) {
+    & .img-op-sp {
+      display: none;
+    }
+    & .img-op {
+      display: block;
+    }
   }
 }
 
