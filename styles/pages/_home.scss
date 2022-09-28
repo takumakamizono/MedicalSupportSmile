@@ -1,0 +1,56 @@
+@use "../globals" as *;
+@use "../parts/common" as *;
+
+.logo {
+  width: 200px;
+  @include mq(lg) {
+    width: 250px;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+  &__inner {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @extend .content-width;
+  }
+  &__nav {
+    display: none;
+    @include mq(lg) {
+      display: block;
+    }
+  }
+  &__ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  &__li {
+    margin-left: 30px;
+    border-bottom: 4px $cMainBlue solid;
+    width: 130px;
+    &:hover {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0; /* 縦軸をセンタリングする */
+        left: 50%;
+        transform: translate(-50%, 133%) rotate(90deg); /* 縦軸をセンタリングする */
+        border: 8px solid transparent;
+        border-left: 14px solid $cMainBlue; /* 好みで色を変えてください */
+      }
+    }
+  }
+}
