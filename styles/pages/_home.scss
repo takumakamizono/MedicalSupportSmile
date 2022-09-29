@@ -18,6 +18,12 @@
   display: flex;
   align-items: center;
   z-index: 10000;
+  &.triggered {
+    //スクロールしたときのヘッダー背景を白色に
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+    transition: 0.8s;
+  }
   &__inner {
     padding-top: 10px;
     display: flex;
