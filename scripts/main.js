@@ -14,3 +14,5 @@ const _navAnimation = function (el, inview) {
 };
 
 const so = new ScrollObserver(".nav-trigger", _navAnimation, { once: false });
+
+new MobileMenu();

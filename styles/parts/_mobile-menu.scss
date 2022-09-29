@@ -1,22 +1,27 @@
 @use "../globals" as *;
-
-
-$cMenuClose: $cBlack;
-$cMenuOpen: $cBlack;
+@use "../parts/common" as *;
 
 .mobile-menu {
   position: fixed;
-  right: 0;
-  top: 60px;
-  width: 300px;
-
+  border: solid 0px transparent;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transition: 0.3s;
+  background: $cWhite;
   & .logo {
     padding: 0 40px;
     font-size: 38px;
   }
 
   &__btn {
-    background-color: unset;
+    @include mq(lg) {
+      display: none;
+    }
+    background-color: $cMainBlue;
+    padding: 10px 6px;
     border: none;
     outline: none !important;
     cursor: pointer;
@@ -34,61 +39,104 @@ $cMenuOpen: $cBlack;
       }
     }
   }
-  &__cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s;
-    cursor: pointer;
-    z-index: 200;
-  }
+}
+
+//モバイルメニューとフッターのメニュー
+.menu {
   &__main {
     padding: 0;
     perspective: 2000px;
     transform-style: preserve-3d;
+    margin-top: 120px;
   }
   &__item {
     list-style: none;
     display: block;
     transform: translate3d(0, 0, -1000px);
-    padding: 0 40px;
+    margin: 0 10px 30px;
     transition: transform 0.3s, opacity 0.2s;
     opacity: 0;
+
+    & a {
+      display: block;
+      position: relative;
+      text-decoration: none !important;
+      border-bottom: 1px dotted $cMainBlue;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        border: 8px solid transparent;
+        border-left: 14px solid $cMainBlue; /* 好みで色を変えてください */
+      }
+    }
   }
-  &__link {
-    display: block;
-    margin-top: 30px;
-    color: $cBlack;
-    text-decoration: none !important;
+}
+
+.access-content {
+  background-color: $cMainBlue;
+  border-radius: 5px;
+  &__inner {
+    padding: 10px 5px;
+  }
+  &__tit {
+    border-bottom: 1px dotted $cWhite;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    & span {
+      font-size: 14px;
+    }
+  }
+  &__ul {
+    list-style: none;
+    padding: 0;
+
+    & li {
+      font-size: 12px;
+      font-weight: 600;
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 5px;
+      &::before {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-size: contain;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+      }
+      &:nth-child(1) {
+        &::before {
+          background-image: url(../images/post-icon.png);
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          background-image: url(../images/train-icon.png);
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          background-image: url(../images/bus-icon.png);
+        }
+      }
+    }
   }
 }
 
 .menu-open {
-  & #container {
-    transform: translate(-300px, 60px);
-    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
-  }
-
   & .mobile-menu {
-    &__cover {
-      opacity: 1;
-      visibility: visible;
-    }
-    &__item {
-      transform: none;
-      opacity: 1;
+    height: 100vh;
+    border: solid 3px $cMainBlue;
+    color: $cWhite;
 
-      @for $i from 1 through 5 {
-        &:nth-child(#{$i}) {
-          transition-delay: $i * 0.07s;
-        }
-      }
-    }
     &__btn {
       & > span {
         background-color: $cMenuOpen;
@@ -104,6 +152,19 @@ $cMenuOpen: $cBlack;
         &:nth-child(3) {
           transition-delay: 140ms;
           transform: translateY(-11px) rotate(-135deg);
+        }
+      }
+    }
+  }
+  //モバイルメニューとフッターのメニュー
+  .menu {
+    &__item {
+      transform: none;
+      opacity: 1;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.07s;
         }
       }
     }
