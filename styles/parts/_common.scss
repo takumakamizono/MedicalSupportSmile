@@ -48,6 +48,24 @@ img {
     flex-wrap: wrap;
   }
 }
+.flex2 {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(lg) {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+}
+.flex3 {
+  display: flex;
+  flex-direction: column;
+
+  @include mq(lg) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
 .purple {
   color: $cWineRed;
