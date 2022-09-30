@@ -96,6 +96,9 @@
 
 //各施設のスタイル
 .institution {
+  max-width: $contentMaxWidth;
+  width: 100%;
+  margin: 0 auto;
   @extend .mb-lg;
   &__UpContent {
     @extend .flex2;
@@ -170,6 +173,68 @@
     }
   }
 }
+//あおぞらの中央のテキストスタイル
+.aozora {
+  &-content {
+    display: flex;
+    justify-content: space-around;
+    @include mq(lg) {
+      flex-direction: column;
+    }
+  }
+  &-oyakusoku {
+    color: $cAozora-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  &-ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    @include mq(lg) {
+      width: 90%;
+      margin: 0 auto;
+    }
+    & li {
+      margin-bottom: 15px;
+      text-align: left;
+      & > span {
+        padding: 5px 10px;
+        background-color: $cAozora-color;
+        border-radius: 50%;
+        margin-right: 5px;
+        color: $cWhite;
+      }
+      @include mq(lg) {
+        display: inline;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+//秋桜の施設のスタイル
+.cosmos {
+  & .institution {
+    &__UnderContent-right {
+      @include mq(lg) {
+        border: 3px solid $cCosmos-color;
+      }
+    }
+  }
+}
+//あおぞらの施設のスタイル
+.aozora {
+  & .institution {
+    &__UnderContent-right {
+      @include mq(lg) {
+        border: 3px solid $cAozora-color;
+      }
+    }
+  }
+}
 
 //理念の部分
 .rinen {
@@ -227,6 +292,7 @@
     line-height: 1.8em;
   }
 }
+//秋桜の理念のスタイル
 .cosmos {
   & .rinen-line {
     border-bottom: 4px solid $cCosmos-color;
@@ -241,6 +307,29 @@
       border: 2px solid $cCosmos-color;
     }
   }
+  & .rinen-text {
+    color: $cCosmos-color;
+  }
+}
+//あおぞらの理念のスタイル
+.aozora {
+  & .rinen-line {
+    border-bottom: 4px solid $cAozora-color;
+    &::before {
+      border-bottom: 2px solid $cAozora-color;
+    }
+  }
+  & .rinen-circle {
+    border: solid 4px $cAozora-color;
+    color: $cAozora-color;
+    &::before {
+      border: 2px solid $cAozora-color;
+    }
+  }
+  & .rinen-text {
+    color: $cAozora-color;
+  }
+}
 }
 
 //背景の三角部分
@@ -338,6 +427,25 @@
     }
   }
 }
+//　秋桜の館内図のスライドのスタイル
+.cosmos {
+  & .slider {
+    &::before {
+      background-image: url(../images/cosmos/cosmos-figure-tit.png);
+    }
+  }
+}
+//　あおぞらの館内図のスライドのスタイル
+.aozora {
+  & .slider {
+    &::before {
+      background-image: url(../images/aozora/aozora-figure-tit.png);
+    }
+    &__inner {
+      margin-top: 50px;
+    }
+  }
+}
 
 .institution-tables {
   @include mq(lg) {
@@ -364,7 +472,7 @@
   }
 
   & tbody th {
-    background: #0ab39d26;
+    background: rgba(10, 179, 157, 0.1);
     color: $FontColor;
     width: 100%;
     display: block;
@@ -386,6 +494,22 @@
       padding: 0;
       text-align: left;
       padding-left: 10px;
+    }
+  }
+}
+//秋桜のテーブルスタイル
+.cosmos {
+  & .institution-table {
+    & tbody th {
+      background: rgba(242, 126, 151, 0.2);
+    }
+  }
+}
+//あおぞらのテーブルスタイル
+.aozora {
+  & .institution-table {
+    & tbody th {
+      background: rgba(0, 147, 221, 0.2);
     }
   }
 }
