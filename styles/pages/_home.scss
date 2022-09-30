@@ -167,3 +167,59 @@
     }
   }
 }
+//理念の部分
+.rinen {
+  margin-bottom: 20px;
+  &-tit {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  &-line {
+    position: absolute;
+    border-bottom: 4px solid $cSmile-color;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -4px;
+      border-bottom: 2px solid $cSmile-color;
+      width: 100%;
+    }
+  }
+  &-circle {
+    z-index: 100;
+    background: white;
+    color: $cSmile-color;
+    font-weight: 600;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border: solid 4px $cSmile-color;
+    border-radius: 50%;
+    top: 0;
+    left: 15%;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 3.3rem;
+      height: 3.3rem;
+      border: solid 2px $cSmile-color;
+      border-radius: 50%;
+    }
+  }
+  &-text {
+    color: $cSmile-color;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+}
