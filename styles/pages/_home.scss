@@ -223,3 +223,39 @@
     line-height: 1.8em;
   }
 }
+//背景の三角部分
+.triangle {
+  width: 3em;
+  height: 3em;
+  background: $cBgGray;
+  position: relative;
+  border-top-left-radius: 30%;
+  left: 50%;
+  top: -17px;
+  transform: translate(-50%, -50%) rotate(41deg) skewY(9deg) scaleX(0.86666);
+  @include mq(lg) {
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(132deg) skewY(9deg) scaleX(0.86666);
+  }
+
+  &::after,
+  &::before {
+    width: 3em;
+    height: 3em;
+    background: transparent;
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  &::before {
+    border-top-right-radius: 30%;
+    transform: skewX(-45deg) translateX(50%);
+    display: none;
+  }
+  &::after {
+    border-bottom-left-radius: 30%;
+    transform: skewY(-45deg) translateY(50%);
+    display: none;
+  }
+}
