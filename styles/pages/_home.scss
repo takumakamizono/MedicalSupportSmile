@@ -1,5 +1,8 @@
 @use "../globals" as *;
 @use "../parts/common" as *;
+.dummy {
+  height: 500px;
+}
 
 .logo {
   width: 200px;
@@ -17,7 +20,7 @@
   background: transparent;
   display: flex;
   align-items: center;
-  z-index: 10000;
+  z-index: 100000;
   &.triggered {
     //スクロールしたときのヘッダー背景を白色に
     background-color: rgba(255, 255, 255, 0.9);
@@ -25,7 +28,7 @@
     transition: 0.8s;
   }
   &__inner {
-    padding-top: 10px;
+    padding: 7px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,6 +170,7 @@
     }
   }
 }
+
 //理念の部分
 .rinen {
   margin-bottom: 20px;
@@ -223,6 +227,22 @@
     line-height: 1.8em;
   }
 }
+.cosmos {
+  & .rinen-line {
+    border-bottom: 4px solid $cCosmos-color;
+    &::before {
+      border-bottom: 2px solid $cCosmos-color;
+    }
+  }
+  & .rinen-circle {
+    border: solid 4px $cCosmos-color;
+    color: $cCosmos-color;
+    &::before {
+      border: 2px solid $cCosmos-color;
+    }
+  }
+}
+
 //背景の三角部分
 .triangle {
   width: 3em;
