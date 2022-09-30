@@ -259,3 +259,62 @@
     display: none;
   }
 }
+
+//モバイル時の館内図のスライド
+.slider {
+  position: relative;
+  @extend .mb-sm;
+  @include mq(lg) {
+    flex-basis: 30%;
+  }
+  &::before {
+    content: "";
+    background-image: url(../images/smile/smile-figure-tit.png);
+    display: inline-block;
+    background-size: cover;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: 5%;
+  }
+  &__inner {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    overflow-x: auto;
+    padding: 0;
+    @include mq(lg) {
+      margin: 0;
+      width: 100%;
+      margin-left: 20px;
+    }
+    &::-webkit-scrollbar {
+      height: 12px; /* スクロールバーの高さ */
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #aaa; /* ツマミの色 */
+      border-radius: 6px; /* ツマミ両端の丸み */
+    }
+    &::-webkit-scrollbar-track {
+      background: #ddd; /* トラックの色 */
+      border-radius: 6px; /* トラック両端の丸み */
+    }
+  }
+
+  &__item {
+    background-color: $cWhite;
+    width: 100%;
+    padding: 8px;
+    margin: 3px;
+    flex-shrink: 0;
+    list-style: none;
+    & img {
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+}
