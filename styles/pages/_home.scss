@@ -60,3 +60,34 @@
     }
   }
 }
+
+.about {
+  @extend .mb-lg;
+  @extend .content-width;
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+    & h2 {
+      @extend .font-lr;
+      border-bottom: solid 4px $cMainBlue;
+      @extend .pb-sm;
+
+      & > span {
+        @extend .font-sm;
+        color: $cMainBlue;
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &__content {
+    @include mq(md) {
+      text-align: center;
+    }
+    & p {
+      @extend .font-sm;
+      line-height: 2em;
+    }
+  }
+}
+
