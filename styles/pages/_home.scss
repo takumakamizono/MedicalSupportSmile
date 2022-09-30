@@ -318,4 +318,54 @@
     }
   }
 }
+
 .institution-tables {
+  @include mq(lg) {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.institution-table {
+  table-layout: fixed;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 12px;
+  margin-bottom: 30px;
+  background-color: $cWhite;
+  padding: 10px;
+  border-radius: 5px;
+  @include mq(lg) {
+    margin-bottom: 0;
+    width: 100%;
+    padding: 0;
+    border-spacing: 0.5em;
+  }
+
+  & tbody th {
+    background: #0ab39d26;
+    color: $FontColor;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    @include mq(lg) {
+      width: 20%;
+      display: inline-block;
+      font-size: 11px;
+    }
+  }
+  & tbody td {
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    @include mq(lg) {
+      width: 80%;
+      display: inline-block;
+      padding: 0;
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+}
