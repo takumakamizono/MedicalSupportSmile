@@ -47,11 +47,6 @@
     & > img {
       transform: none;
     }
-
-    & .hero__title {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
   }
 }
 
@@ -61,15 +56,37 @@
   @extend .mb-lg;
 
   &__title {
+    font-family: "Noto Serif JP", serif;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, calc(-50% + 20px));
-    color: $cWhite;
-    font-size: 25px;
+    right: -6%;
+    line-height: 1.8em;
+    transform: translate(-50%, -50%);
+    color: $cMainBlue;
+
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
     z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease 1s, transform 0.3s ease 1s;
+    & > span {
+      display: block;
+    }
+
+    @include mq(sm) {
+      font-size: 14px;
+      right: 15%;
+    }
+    @include mq(md) {
+      font-size: 16px;
+    }
+    @include mq(lg) {
+      font-size: 25px;
+    }
+    @include mq(xl) {
+      font-size: 30px;
+    }
   }
 
   &__footer {

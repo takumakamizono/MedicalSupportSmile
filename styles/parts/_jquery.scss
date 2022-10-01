@@ -9,7 +9,7 @@
   z-index: 1000;
   opacity: 0.6;
   @include mq(lg) {
-    bottom: 50% !important;
+    bottom: 30% !important;
   }
 
   & > a {
@@ -18,5 +18,31 @@
     width: 50px;
     height: 50px;
     text-decoration: none;
+  }
+}
+
+/*========= 光りながら出現させるためのCSS ===============*/
+
+.glowAnime span {
+  opacity: 0;
+}
+
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span {
+  animation: glow_anime_on 1s ease-out forwards;
+}
+
+@keyframes glow_anime_on {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 3px 3px 10px #fff, 3px 3px 15px #fff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 1px 1px 1px #fff, 1px 1px 1px #fff;
   }
 }
