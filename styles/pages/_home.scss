@@ -1,8 +1,5 @@
 @use "../globals" as *;
 @use "../parts/common" as *;
-.dummy {
-  height: 500px;
-}
 
 .logo {
   width: 200px;
@@ -536,6 +533,65 @@
   }
 }
 
+.access-content {
+  background-color: $cMainBlue;
+  border-radius: 5px;
+  &__inner {
+    padding: 10px 5px;
+  }
+  &__tit {
+    border-bottom: 1px dotted $cWhite;
+    @extend .font-lg;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    & span {
+      font-size: 14px;
+    }
+  }
+  &__ul {
+    list-style: none;
+    padding: 0;
+
+    & li {
+      @extend .font-sm;
+      font-weight: 600;
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 5px;
+      &::before {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        content: "";
+        display: inline-block;
+        @extend .icon-size;
+        background-size: contain;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        @include mq(lg) {
+          top: 6px;
+        }
+      }
+      &:nth-child(1) {
+        &::before {
+          background-image: url(../images/post-icon.png);
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          background-image: url(../images/train-icon.png);
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          background-image: url(../images/bus-icon.png);
+        }
+      }
+    }
+  }
+}
+
 .access {
   position: relative;
   width: 100%;
@@ -544,14 +600,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  @include mq(md) {
+  @include mq(lg) {
     background-image: url(../images/access-bgimg.png);
+    height: 600px;
   }
   &__inner {
     @extend .flex3;
     justify-content: space-around;
     @extend .content-width;
+    @include mq(lg) {
+      padding-top: 50px;
+    }
   }
+
   &-bg {
     padding: 50px 0;
     background-color: transparent;
@@ -559,6 +620,9 @@
     @extend .content-width;
     position: relative;
     z-index: 20;
+    @include mq(lg) {
+      padding: 0;
+    }
   }
   &::after {
     content: "";
@@ -573,6 +637,17 @@
     top: 0;
     bottom: 0;
     z-index: 10;
+    @include mq(lg) {
+      background: linear-gradient(
+        170deg,
+        rgba(0, 115, 188, 1),
+        rgba(255, 255, 255, 0.1)
+      );
+    }
+  }
+  &__left,
+  &__right {
+    flex-basis: 50%;
   }
 }
 
@@ -580,6 +655,9 @@
   position: relative;
   z-index: 20;
   text-align: center;
+  @include mq(lg) {
+    margin-top: 30px;
+  }
   & > a {
     box-shadow: 2px 2px 2px rgba(74, 65, 65, 0.5);
     position: relative;
@@ -605,6 +683,8 @@
   }
 }
 .map {
+  width: 100%;
+
   max-width: 500px;
   position: relative;
   z-index: 20;

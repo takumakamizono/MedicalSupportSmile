@@ -76,62 +76,6 @@
   }
 }
 
-.access-content {
-  background-color: $cMainBlue;
-  border-radius: 5px;
-  &__inner {
-    padding: 10px 5px;
-  }
-  &__tit {
-    border-bottom: 1px dotted $cWhite;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    & span {
-      font-size: 14px;
-    }
-  }
-  &__ul {
-    list-style: none;
-    padding: 0;
-
-    & li {
-      font-size: 12px;
-      font-weight: 600;
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 5px;
-      &::before {
-        position: absolute;
-        top: 3px;
-        left: 0;
-        content: "";
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        background-size: contain;
-        vertical-align: middle;
-        background-repeat: no-repeat;
-      }
-      &:nth-child(1) {
-        &::before {
-          background-image: url(../images/post-icon.png);
-        }
-      }
-      &:nth-child(2) {
-        &::before {
-          background-image: url(../images/train-icon.png);
-        }
-      }
-      &:nth-child(3) {
-        &::before {
-          background-image: url(../images/bus-icon.png);
-        }
-      }
-    }
-  }
-}
-
 .menu-open {
   & .mobile-menu {
     height: 100vh;
