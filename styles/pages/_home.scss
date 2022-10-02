@@ -445,6 +445,9 @@ body {
     &::before {
       background-image: url(../images/cosmos/cosmos-figure-tit.png);
     }
+    &__inner {
+      overflow-x: initial;
+    }
   }
 }
 //　あおぞらの館内図のスライドのスタイル
