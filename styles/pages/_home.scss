@@ -603,13 +603,20 @@ body {
 }
 
 .access {
+  @extend .pb-lg;
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 600px;
   background-image: url(../images/access-bgimg-sp.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  @include mq(sm) {
+    height: 700px;
+  }
+  @include mq(md) {
+    height: 800px;
+  }
   @include mq(lg) {
     background-image: url(../images/access-bgimg.png);
     height: 600px;
@@ -618,6 +625,7 @@ body {
     @extend .flex3;
     justify-content: space-around;
     @extend .content-width;
+    height: 100%;
     @include mq(lg) {
       padding-top: 50px;
     }
@@ -716,7 +724,7 @@ body {
 }
 
 .footer {
-  padding: 80px 0 30px 0;
+  padding: 40px 0 30px 0;
   background-color: $cFooter-bg;
   &__inner {
     padding: 7px 0;

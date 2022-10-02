@@ -13,7 +13,7 @@
   position: fixed;
   right: 3%;
   bottom: 10% !important;
-  z-index: 1000;
+  z-index: 2000;
   opacity: 0.6;
   @include mq(lg) {
     bottom: 30% !important;
