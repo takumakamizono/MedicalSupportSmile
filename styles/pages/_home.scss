@@ -606,26 +606,23 @@ body {
   @extend .pb-lg;
   position: relative;
   width: 100%;
-  height: 600px;
+
   background-image: url(../images/access-bgimg-sp.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  @include mq(sm) {
-    height: 700px;
-  }
+
   @include mq(md) {
-    height: 800px;
+    padding-top: 0;
   }
   @include mq(lg) {
     background-image: url(../images/access-bgimg.png);
-    height: 600px;
   }
   &__inner {
     @extend .flex3;
     justify-content: space-around;
     @extend .content-width;
-    height: 100%;
+
     @include mq(lg) {
       padding-top: 50px;
     }
