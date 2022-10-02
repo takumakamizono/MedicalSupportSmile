@@ -2,7 +2,8 @@ class MobileMenu {
   constructor() {
     this.DOM = {};
     this.DOM.btn = document.querySelector(".mobile-menu__btn");
-    // this.DOM.cover = document.querySelector(".mobile-menu__cover");
+    this.DOM.menu = document.querySelectorAll(".menu__item > a ");
+
     this.DOM.header = document.querySelector(".header");
     this.eventType = this._getEventType();
     this._addEvent();
@@ -22,6 +23,10 @@ class MobileMenu {
 
   _addEvent() {
     this.DOM.btn.addEventListener(this.eventType, this._toggle.bind(this));
-    // this.DOM.cover.addEventListener(this.eventType, this._toggle.bind(this));
+
+    //モバイルメニューのリストがクリックされたときメニューが開く
+    this.DOM.menu.forEach((element) => {
+      element.addEventListener(this.eventType, this._toggle.bind(this));
+    });
   }
 }
