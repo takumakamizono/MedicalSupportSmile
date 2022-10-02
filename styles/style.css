@@ -67,11 +67,11 @@ img {
   margin-bottom: 16px !important;
 }
 
-.mb-lg, .about, .institution, .footer__nav, .hero {
+.mb-lg, .about, .footer__nav {
   margin-bottom: 80px !important;
 }
 @media screen and (min-width: 960px) {
-  .mb-lg, .about, .institution, .footer__nav, .hero {
+  .mb-lg, .about, .footer__nav {
     margin-bottom: 150px !important;
   }
 }
@@ -80,11 +80,11 @@ img {
   padding-bottom: 16px !important;
 }
 
-.pb-lg, .access {
+.pb-lg, .institution, .access {
   padding-bottom: 80px !important;
 }
 @media screen and (min-width: 960px) {
-  .pb-lg, .access {
+  .pb-lg, .institution, .access {
     padding-bottom: 150px !important;
   }
 }
@@ -234,6 +234,7 @@ img {
 .hero {
   overflow: hidden;
   position: relative;
+  margin-bottom: 80px;
   height: 100vh;
 }
 .hero__title {
@@ -711,6 +712,12 @@ body {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  background-color: rgba(244, 244, 244, 0.9);
+}
+@media screen and (min-width: 960px) {
+  .institution {
+    background-color: white;
+  }
 }
 .institution__UpContent-right {
   flex-basis: 50%;
@@ -1174,31 +1181,23 @@ body {
 .access {
   position: relative;
   width: 100%;
-  height: 600px;
   background-image: url(../images/access-bgimg-sp.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
 }
-@media screen and (min-width: 480px) {
-  .access {
-    height: 700px;
-  }
-}
 @media screen and (min-width: 600px) {
   .access {
-    height: 800px;
+    padding-top: 0;
   }
 }
 @media screen and (min-width: 960px) {
   .access {
     background-image: url(../images/access-bgimg.png);
-    height: 600px;
   }
 }
 .access__inner {
   justify-content: space-around;
-  height: 100%;
 }
 @media screen and (min-width: 960px) {
   .access__inner {

@@ -54,7 +54,7 @@
 .hero {
   overflow: hidden;
   position: relative;
-  @extend .mb-lg;
+  margin-bottom: 80px;
   height: 100vh;
 
   &__title {
