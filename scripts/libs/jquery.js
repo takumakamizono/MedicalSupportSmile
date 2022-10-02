@@ -1,7 +1,7 @@
 //topへ戻るボタン
 jQuery(function () {
   let appear = false;
-  let pagetop = $("#page_top");
+  let pagetop = $("#page_top,#page-top");
   $(window).scroll(function () {
     if ($(this).scrollTop() > 400) {
       //100pxスクロールしたら
@@ -77,3 +77,16 @@ $(window).on("load", function () {
 
   GlowAnimeControl(); /* アニメーション用の関数を呼ぶ*/
 }); // ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+//ページ内リンクの位置調整
+$(function () {
+  var headerHight = 20; //ヘッダーの高さを指定しheaderHightに代入
+  $('a[href^="#"]').click(function () {
+    //アンカーリンクをクリックでイベント処理
+    var href = $(this).attr("href"); //アンカーリンクの属性を取得
+    var target = $(href == "#" || href == "" ? "html" : href); //hrefの値が"#"または""だった場合"html"が、それ以外の場合はhrefをtargetに代入
+    var position = target.offset().top - headerHight; //画面上部からターゲット要素までの距離 - ヘッダー高さをpositionに代入
+    $("html, body").animate({ scrollTop: position }, 500, "swing"); // 取得したpositionの位置まで0.5秒でゆっくり移動
+    return false; //clickイベント実行後にaタグのhrefリンクを打ち消す
+  });
+});
