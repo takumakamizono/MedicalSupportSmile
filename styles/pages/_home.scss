@@ -103,7 +103,12 @@ body {
   max-width: $contentMaxWidth;
   width: 100%;
   margin: 0 auto;
-  @extend .mb-lg;
+  @extend .pb-lg;
+  background-color: $cBgGray;
+  @include mq(lg) {
+    background-color: $cWhite;
+  }
+
   &__UpContent {
     @extend .flex2;
   }
