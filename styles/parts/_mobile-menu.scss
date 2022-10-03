@@ -57,21 +57,22 @@
     margin: 0 10px 30px;
     transition: transform 0.3s, opacity 0.2s;
     opacity: 0;
+    border-bottom: 1px dotted $cMainBlue;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+      border: 8px solid transparent;
+      border-left: 14px solid $cMainBlue; /* 好みで色を変えてください */
+    }
 
     & a {
+      width: 50%;
       display: block;
-      position: relative;
       text-decoration: none !important;
-      border-bottom: 1px dotted $cMainBlue;
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(-50%, -50%);
-        border: 8px solid transparent;
-        border-left: 14px solid $cMainBlue; /* 好みで色を変えてください */
-      }
     }
   }
 }
