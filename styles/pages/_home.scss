@@ -663,34 +663,19 @@ body {
 }
 
 .google-map {
-  position: relative;
-  z-index: 20;
-  text-align: center;
+  max-width: 70%;
+  width: 250px;
+  margin: 0 auto;
   @include mq(lg) {
-    margin-top: 30px;
+    display: none;
   }
-  & > a {
-    box-shadow: 2px 2px 2px rgba(74, 65, 65, 0.5);
-    position: relative;
-    background-color: $cWhite;
-    color: $FontColor;
-    font-weight: 500;
-    padding: 3px 20px 4px 50px;
-    text-decoration: none;
-    border-radius: 3px;
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 20px;
-      content: "";
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      background-size: contain;
-      vertical-align: middle;
-      background-repeat: no-repeat;
-      background-image: url(../images/googlemap-icon.png);
-    }
+}
+.google-map-side {
+  display: none;
+  width: 200px;
+  @include mq(lg) {
+    display: block;
+    margin-bottom: 10px;
   }
 }
 .map {
