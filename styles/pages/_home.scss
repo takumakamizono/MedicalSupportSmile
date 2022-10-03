@@ -556,12 +556,24 @@ body {
   }
   &__tit {
     border-bottom: 1px dotted $cWhite;
-    @extend .font-lg;
-    font-weight: bold;
-    margin-bottom: 10px;
-
-    & span {
-      font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    & > p {
+      @extend .font-lg;
+      font-weight: bold;
+      @include mq(lg) {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: 20px;
+      }
+      & span {
+        font-size: 14px;
+      }
+    }
+    @include mq(lg) {
+      border-bottom: none;
     }
   }
   &__ul {
