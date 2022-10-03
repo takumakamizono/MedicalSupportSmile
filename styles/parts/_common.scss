@@ -94,11 +94,28 @@ img {
     font-size: 23px;
   }
 }
+.font-lr2 {
+  font-size: 17px;
+
+  @include mq(lg) {
+    font-size: 28px;
+  }
+}
 .font-lg {
   font-size: 25px;
 
   @include mq(lg) {
     font-size: 36px;
+  }
+}
+.font-table {
+  font-size: 12px;
+
+  @include mq(sm) {
+    font-size: 14px;
+  }
+  @include mq(lg) {
+    font-size: 16px;
   }
 }
 
