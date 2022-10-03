@@ -231,5 +231,11 @@
     bottom: -0px;
     left: 0;
     width: 100%;
+    @include mq(lg) {
+      bottom: -22px;
+    }
+    @include mq(xl) {
+      bottom: -30px;
+    }
   }
 }
