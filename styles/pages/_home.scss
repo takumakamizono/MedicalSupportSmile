@@ -74,9 +74,9 @@ body {
     & h2 {
       display: inline-block;
       font-family: "Noto Serif JP", serif;
-      @extend .font-lr;
+      @extend .font-lr2;
       border-bottom: solid 4px $cMainBlue;
-      @extend .pb-sm;
+      padding-bottom: 3px;
 
       & > span {
         font-family: "Noto Sans JP", sans-serif;
@@ -85,6 +85,7 @@ body {
         color: $cMainBlue;
         display: block;
         margin-bottom: 5px;
+        font-weight: bold;
       }
     }
   }
@@ -95,6 +96,7 @@ body {
     & p {
       @extend .font-sm;
       line-height: 2em;
+      font-weight: 600;
     }
   }
 }
@@ -144,7 +146,8 @@ body {
   &__CenterContent {
     padding: 30px 0 30px 0;
     @extend .font-md;
-    font-weight: 500;
+    font-weight: 600;
+
     @include mq(md) {
       text-align: center;
       padding: 50px 0 80px 0;
@@ -202,20 +205,24 @@ body {
   &-ul {
     list-style: none;
     padding: 0;
-    font-size: 12px;
+    font-size: 14px;
+
     @include mq(lg) {
       width: 90%;
       margin: 0 auto;
+      font-size: 17px;
     }
     & li {
       margin-bottom: 15px;
       text-align: left;
       & > span {
+        font-size: 19px;
         padding: 5px 10px;
         background-color: $cAozora-color;
         border-radius: 50%;
         margin-right: 5px;
         color: $cWhite;
+        font-weight: bold;
       }
       @include mq(lg) {
         display: inline;
@@ -459,12 +466,22 @@ body {
 //　あおぞらの館内図のスライドのスタイル
 .aozora {
   & .slider {
+    &__inner {
+      height: 100%;
+    }
+    flex-basis: 35%;
     &::before {
       background-image: url(../images/aozora/aozora-figure-tit.png);
     }
-    &__inner {
-      margin-top: 50px;
+    &__item {
+      & img {
+        object-fit: contain;
+        height: 100%;
+      }
     }
+  }
+  & .institution-tables {
+    padding: 30px 0;
   }
 }
 
@@ -480,7 +497,7 @@ body {
   table-layout: fixed;
   margin: 0 auto;
   width: 90%;
-  font-size: 12px;
+  @extend .font-table;
   margin-bottom: 30px;
   background-color: $cWhite;
   padding: 10px;
@@ -490,6 +507,9 @@ body {
     width: 100%;
     padding: 0;
     border-spacing: 0.5em;
+  }
+  & tbody tr {
+    vertical-align: top;
   }
 
   & tbody th {
@@ -517,6 +537,10 @@ body {
       padding-left: 10px;
     }
   }
+}
+.institution-ul {
+  list-style: none;
+  padding: 0;
 }
 //秋桜のテーブルスタイル
 .cosmos {
@@ -775,6 +799,9 @@ body {
       display: block;
       width: 50%;
       text-decoration: none !important;
+      @include mq(lg) {
+        width: 100%;
+      }
     }
     &::before {
       content: "";
