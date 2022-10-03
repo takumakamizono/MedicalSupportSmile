@@ -623,11 +623,12 @@ body {
   @extend .pb-lg;
   position: relative;
   width: 100%;
-
   background-image: url(../images/access-bgimg-sp.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  top: 0;
+  left: 0;
 
   @include mq(md) {
     padding-top: 0;
@@ -639,7 +640,6 @@ body {
     @extend .flex3;
     justify-content: space-around;
     @extend .content-width;
-
     @include mq(lg) {
       padding-top: 50px;
     }
@@ -649,34 +649,13 @@ body {
     padding: 50px 0;
     background-color: transparent;
     color: $cWhite;
-    @extend .content-width;
     position: relative;
     z-index: 20;
     @include mq(lg) {
       padding: 0;
     }
   }
-  &::after {
-    content: "";
-    background: linear-gradient(
-      170deg,
-      rgba(0, 115, 188, 1),
-      rgba(255, 255, 255, 0.9)
-    );
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10;
-    @include mq(lg) {
-      background: linear-gradient(
-        170deg,
-        rgba(0, 115, 188, 1),
-        rgba(255, 255, 255, 0.1)
-      );
-    }
-  }
+
   &__left,
   &__right {
     flex-basis: 50%;
