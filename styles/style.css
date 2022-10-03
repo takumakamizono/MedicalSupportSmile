@@ -89,7 +89,7 @@ img {
   }
 }
 
-.content-width, .header__inner, .about, .institution__ex, .institution__CenterContent p, .access__inner, .access-bg, .map, .footer__inner, .footer__copy {
+.content-width, .header__inner, .about, .institution__ex, .institution__CenterContent p, .access__inner, .map, .footer__inner, .footer__copy {
   width: 90%;
   margin: 0 auto;
   max-width: 1440px;
@@ -160,11 +160,11 @@ img {
   }
 }
 
-.font-lg, .access-content__tit, .main-title {
+.font-lg, .access-content__tit > p, .main-title {
   font-size: 25px;
 }
 @media screen and (min-width: 960px) {
-  .font-lg, .access-content__tit, .main-title {
+  .font-lg, .access-content__tit > p, .main-title {
     font-size: 36px;
   }
 }
@@ -441,6 +441,16 @@ img {
   left: 0;
   width: 100%;
 }
+@media screen and (min-width: 960px) {
+  .image-opacity > img {
+    bottom: -22px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .image-opacity > img {
+    bottom: -30px;
+  }
+}
 
 .mobile-menu {
   position: fixed;
@@ -495,14 +505,10 @@ img {
   margin: 0 10px 30px;
   transition: transform 0.3s, opacity 0.2s;
   opacity: 0;
-}
-.menu__item a {
-  display: block;
-  position: relative;
-  text-decoration: none !important;
   border-bottom: 1px dotted #0073bc;
+  position: relative;
 }
-.menu__item a::before {
+.menu__item::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -510,6 +516,11 @@ img {
   transform: translate(-50%, -50%);
   border: 8px solid transparent;
   border-left: 14px solid #0073bc; /* 好みで色を変えてください */
+}
+.menu__item a {
+  width: 50%;
+  display: block;
+  text-decoration: none !important;
 }
 
 .menu-open .mobile-menu {
@@ -564,7 +575,6 @@ img {
   right: 3%;
   bottom: 10% !important;
   z-index: 2000;
-  opacity: 0.6;
 }
 @media screen and (min-width: 960px) {
   #page_top {
@@ -1137,11 +1147,28 @@ body {
 }
 .access-content__tit {
   border-bottom: 1px dotted white;
-  font-weight: bold;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 20px;
 }
-.access-content__tit span {
+.access-content__tit > p {
+  font-weight: bold;
+}
+@media screen and (min-width: 960px) {
+  .access-content__tit > p {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 20px;
+  }
+}
+.access-content__tit > p span {
   font-size: 14px;
+}
+@media screen and (min-width: 960px) {
+  .access-content__tit {
+    border-bottom: none;
+  }
 }
 .access-content__ul {
   list-style: none;
@@ -1185,6 +1212,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  top: 0;
+  left: 0;
 }
 @media screen and (min-width: 600px) {
   .access {
@@ -1216,57 +1245,30 @@ body {
     padding: 0;
   }
 }
-.access::after {
-  content: "";
-  background: linear-gradient(170deg, rgb(0, 115, 188), rgba(255, 255, 255, 0.9));
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 10;
-}
-@media screen and (min-width: 960px) {
-  .access::after {
-    background: linear-gradient(170deg, rgb(0, 115, 188), rgba(255, 255, 255, 0.1));
-  }
-}
 .access__left, .access__right {
   flex-basis: 50%;
 }
 
 .google-map {
-  position: relative;
-  z-index: 20;
-  text-align: center;
+  max-width: 70%;
+  width: 250px;
+  margin: 0 auto;
 }
 @media screen and (min-width: 960px) {
   .google-map {
-    margin-top: 30px;
+    display: none;
   }
 }
-.google-map > a {
-  box-shadow: 2px 2px 2px rgba(74, 65, 65, 0.5);
-  position: relative;
-  background-color: white;
-  color: #333333;
-  font-weight: 500;
-  padding: 3px 20px 4px 50px;
-  text-decoration: none;
-  border-radius: 3px;
+
+.google-map-side {
+  display: none;
+  width: 200px;
 }
-.google-map > a::before {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-size: contain;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-image: url(../images/googlemap-icon.png);
+@media screen and (min-width: 960px) {
+  .google-map-side {
+    display: block;
+    margin-bottom: 10px;
+  }
 }
 
 .map {
@@ -1311,7 +1313,7 @@ body {
 }
 @media screen and (min-width: 960px) {
   .footer .logo {
-    width: 250px;
+    width: 210px;
     margin-bottom: 0;
     flex-basis: 25%;
     margin: 0;
@@ -1337,6 +1339,8 @@ body {
   }
 }
 .footer__li {
+  border-bottom: 1px dotted #0073bc;
+  position: relative;
   list-style: none;
   display: block;
   margin: 0 10px 30px;
@@ -1363,21 +1367,20 @@ body {
 }
 .footer__li a {
   display: block;
-  position: relative;
+  width: 50%;
   text-decoration: none !important;
-  border-bottom: 1px dotted #0073bc;
 }
-.footer__li a::before {
+.footer__li::before {
   content: "";
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -18px;
   transform: translate(-50%, -50%);
   border: 8px solid transparent;
   border-left: 14px solid #0073bc; /* 好みで色を変えてください */
 }
 @media screen and (min-width: 960px) {
-  .footer__li a::before {
+  .footer__li::before {
     display: none;
   }
 }
