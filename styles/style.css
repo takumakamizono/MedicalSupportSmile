@@ -460,7 +460,7 @@ img {
 }
 .image-opacity > img {
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   left: 0;
   width: 100%;
 }
