@@ -186,7 +186,7 @@ img {
     font-size: 14px;
   }
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1280px) {
   .font-table, .institution-table {
     font-size: 16px;
   }
@@ -265,7 +265,7 @@ img {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 5%;
   line-height: 1.8em;
   transform: translate(-50%, -50%);
@@ -776,10 +776,43 @@ body {
 .institution__UpContent-left .logo > img {
   margin: 0 auto;
 }
-.institution__ex > img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.institution__ex-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.institution__ex-title::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #0ab39d;
+  margin-right: 5px;
+}
+.institution__ex-under-right {
+  flex-basis: 50%;
+}
+.institution__ex-cont {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  flex-basis: 50%;
+}
+.institution__ex-cont dd::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #333333;
+  margin-right: 5px;
+}
+.institution__ex-up {
+  border-bottom: 1px dotted black;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.institution__ex-under-left-inner {
+  display: flex;
+  justify-content: space-between;
 }
 .institution__CenterContent {
   padding: 30px 0 30px 0;
@@ -820,6 +853,27 @@ body {
   .institution__UnderContent-left {
     flex-basis: 40%;
   }
+}
+
+.cosmos-ex-title::before {
+  background: #f27e97;
+}
+
+.aozora-ex-up {
+  display: flex;
+  justify-content: flex-start;
+}
+.aozora-ex-up .institution__ex-title {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.aozora-ex-up-title::before {
+  display: none;
+}
+
+.aozora-ex-under .institution__ex-title::before {
+  background: #0093dd;
 }
 
 .aozora-content {
@@ -1363,7 +1417,7 @@ body {
   .footer .logo {
     width: 210px;
     margin-bottom: 0;
-    flex-basis: 25%;
+    flex-basis: 20%;
     margin: 0;
   }
 }

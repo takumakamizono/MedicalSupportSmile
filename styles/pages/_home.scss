@@ -138,11 +138,51 @@ body {
   }
   &__ex {
     @extend .content-width;
-    & > img {
-      width: 100%;
-      object-fit: cover;
+    &-title {
+      font-size: 14px;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: $cSmile-color;
+        margin-right: 5px;
+      }
+    }
+    &-under-right {
+      flex-basis: 50%;
+    }
+    &-cont {
+      font-size: 12px;
+      margin-top: 10px;
+      font-weight: 600;
+      flex-basis: 50%;
+      & dd {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          background: $FontColor;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &-up {
+      border-bottom: 1px dotted $cBlack;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    &-under-left-inner {
+      display: flex;
+      justify-content: space-between;
     }
   }
+
   &__CenterContent {
     padding: 30px 0 30px 0;
     @extend .font-md;
@@ -183,6 +223,33 @@ body {
     }
     @include mq(lg) {
       flex-basis: 40%;
+    }
+  }
+}
+.cosmos-ex-title {
+  &::before {
+    background: $cCosmos-color;
+  }
+}
+.aozora-ex-up {
+  display: flex;
+  justify-content: flex-start;
+
+  & .institution__ex-title {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  &-title {
+    &::before {
+      display: none;
+    }
+  }
+}
+.aozora-ex-under {
+  & .institution__ex-title {
+    &::before {
+      background: $cAozora-color;
     }
   }
 }
@@ -749,7 +816,7 @@ body {
     @include mq(lg) {
       width: 210px;
       margin-bottom: 0;
-      flex-basis: 25%;
+      flex-basis: 20%;
 
       margin: 0;
     }
