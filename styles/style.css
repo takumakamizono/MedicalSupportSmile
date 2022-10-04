@@ -786,7 +786,6 @@ body {
   font-size: 12px;
   margin-top: 10px;
   font-weight: 600;
-  flex-basis: 50%;
 }
 .institution__ex-cont dd::before {
   content: "";
@@ -853,6 +852,7 @@ body {
 .aozora-ex-up {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 .aozora-ex-up .institution__ex-title {
   width: 50px;

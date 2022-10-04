@@ -159,7 +159,7 @@ body {
       font-size: 12px;
       margin-top: 10px;
       font-weight: 600;
-      flex-basis: 50%;
+
       & dd {
         &::before {
           content: "";
@@ -234,6 +234,7 @@ body {
 .aozora-ex-up {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 
   & .institution__ex-title {
     width: 50px;
