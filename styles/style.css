@@ -1029,15 +1029,10 @@ body {
   display: none;
 }
 
-.slider {
+.institution__UnderContent-right-inner {
   position: relative;
 }
-@media screen and (min-width: 960px) {
-  .slider {
-    flex-basis: 30%;
-  }
-}
-.slider::before {
+.institution__UnderContent-right-inner::before {
   content: "";
   background-image: url(../images/smile/smile-figure-tit.png);
   display: inline-block;
@@ -1049,6 +1044,36 @@ body {
   position: absolute;
   top: -20px;
   left: 5%;
+}
+
+.cosmos .institution__UnderContent-right-inner::before {
+  background-image: url(../images/cosmos/cosmos-figure-tit.png);
+}
+
+.aozora .institution__UnderContent-right-inner::before {
+  background-image: url(../images/aozora/aozora-figure-tit.png);
+}
+
+.figure {
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: 10px;
+}
+@media screen and (min-width: 960px) {
+  .figure {
+    display: block;
+  }
+}
+
+.slider {
+  position: relative;
+}
+@media screen and (min-width: 960px) {
+  .slider {
+    flex-basis: 30%;
+    display: none;
+  }
 }
 .slider__inner {
   width: 90%;
@@ -1089,9 +1114,6 @@ body {
      object-fit: cover;
 }
 
-.cosmos .slider::before {
-  background-image: url(../images/cosmos/cosmos-figure-tit.png);
-}
 .cosmos .slider__inner {
   overflow-x: initial;
 }
@@ -1101,9 +1123,6 @@ body {
 }
 .aozora .slider__inner {
   height: 100%;
-}
-.aozora .slider::before {
-  background-image: url(../images/aozora/aozora-figure-tit.png);
 }
 .aozora .slider__item img {
   -o-object-fit: contain;
@@ -1120,6 +1139,7 @@ body {
     flex-basis: 60%;
     flex-direction: column;
     justify-content: center;
+    display: none;
   }
 }
 
