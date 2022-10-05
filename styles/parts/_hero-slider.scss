@@ -198,34 +198,35 @@
 }
 
 .image-opacity {
-  position: relative;
-  z-index: 1000;
-  width: 100%;
-  & .top-op-sp {
-    display: block;
-  }
-  & .img-op {
-    display: none;
-  }
-  @include mq(sm) {
-    & .img-op-sp {
-      display: none;
-    }
-    & .img-op {
-      display: block;
-    }
-  }
+  display: none;
+  // position: relative;
+  // z-index: 1000;
+  // width: 100%;
+  // & .top-op-sp {
+  //   display: block;
+  // }
+  // & .img-op {
+  //   display: none;
+  // }
+  // @include mq(sm) {
+  //   & .img-op-sp {
+  //     display: none;
+  //   }
+  //   & .img-op {
+  //     display: block;
+  //   }
+  // }
 
-  & > img {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    @include mq(lg) {
-      bottom: -22px;
-    }
-    @include mq(xl) {
-      bottom: -30px;
-    }
-  }
+  // & > img {
+  //   position: absolute;
+  //   bottom: -1px;
+  //   left: 0;
+  //   width: 100%;
+  //   @include mq(lg) {
+  //     bottom: -22px;
+  //   }
+  //   @include mq(xl) {
+  //     bottom: -30px;
+  //   }
+  // }
 }
