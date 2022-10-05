@@ -431,39 +431,7 @@ img {
 }
 
 .image-opacity {
-  position: relative;
-  z-index: 1000;
-  width: 100%;
-}
-.image-opacity .top-op-sp {
-  display: block;
-}
-.image-opacity .img-op {
   display: none;
-}
-@media screen and (min-width: 480px) {
-  .image-opacity .img-op-sp {
-    display: none;
-  }
-  .image-opacity .img-op {
-    display: block;
-  }
-}
-.image-opacity > img {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-}
-@media screen and (min-width: 960px) {
-  .image-opacity > img {
-    bottom: -22px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .image-opacity > img {
-    bottom: -30px;
-  }
 }
 
 .mobile-menu {
@@ -1025,6 +993,7 @@ body {
 }
 
 .triangle {
+  display: none;
   width: 3em;
   height: 3em;
   background: rgba(244, 244, 244, 0.9);
