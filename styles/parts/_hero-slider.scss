@@ -62,6 +62,7 @@
     font-weight: bold;
     letter-spacing: 0.1em;
     z-index: 2;
+    display: none;
     & > span {
       display: block;
     }
@@ -77,6 +78,7 @@
     @include mq(lg) {
       font-size: 26px;
       right: 15%;
+      display: block;
     }
     @include mq(xl) {
       font-size: 30px;
