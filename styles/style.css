@@ -669,11 +669,12 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
+  padding: 0;
 }
 .header__li {
   margin-left: 30px;
   border-bottom: 4px #0073bc solid;
-  width: 130px;
+  width: 110px;
 }
 .header__li:hover {
   position: relative;
@@ -904,6 +905,24 @@ body {
   .aozora .institution__UnderContent-right {
     border: 3px solid #0093dd;
   }
+}
+
+.company .institution__UpContent-left {
+  background-color: rgba(244, 244, 244, 0.9);
+  padding: 20px 0;
+  flex-basis: 50%;
+}
+.company .institution__UpContent-left .logo {
+  margin: 0 0 0 7%;
+  width: 200px;
+}
+@media screen and (min-width: 960px) {
+  .company .institution__UpContent-left .logo {
+    margin: 0 0 0 12%;
+  }
+}
+.company .institution__UpContent-left .logo > img {
+  margin: 0;
 }
 
 .rinen {
@@ -1197,7 +1216,7 @@ body {
 }
 
 .company .institution-table {
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: transparent;
 }
 .company .institution-table tbody th {
@@ -1205,7 +1224,7 @@ body {
 }
 @media screen and (min-width: 960px) {
   .company .institution-table {
-    margin: 30px auto 0;
+    margin: 10px auto 0;
     width: 80%;
   }
 }
@@ -1372,6 +1391,7 @@ body {
 }
 .footer__inner {
   padding: 7px 0;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -1426,7 +1446,7 @@ body {
   .footer__li {
     margin-left: 30px;
     border-bottom: 4px #0073bc solid;
-    width: 130px;
+    width: 110px;
     margin: 0 0 0 30px;
   }
   .footer__li:hover {

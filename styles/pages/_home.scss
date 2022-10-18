@@ -321,6 +321,27 @@ body {
     }
   }
 }
+.company {
+  & .institution {
+    &__UpContent-left {
+      background-color: $cBgGray;
+      padding: 20px 0;
+      flex-basis: 50%;
+
+      & .logo {
+        margin: 0 0 0 7%;
+        width: 200px;
+        @include mq(lg) {
+          margin: 0 0 0 12%;
+        }
+
+        & > img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
 
 //理念の部分
 .rinen {
@@ -667,13 +688,13 @@ body {
 //会社概要のテーブルスタイル
 .company {
   & .institution-table {
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: transparent;
     & tbody th {
       background: rgba(0, 115, 188, 0.2);
     }
     @include mq(lg) {
-      margin: 30px auto 0;
+      margin: 10px auto 0;
       width: 80%;
     }
   }
