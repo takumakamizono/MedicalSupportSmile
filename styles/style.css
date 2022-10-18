@@ -133,6 +133,15 @@ img {
   z-index: 0;
 }
 
+.font-ssm, .rinen-text {
+  font-size: 12px;
+}
+@media screen and (min-width: 960px) {
+  .font-ssm, .rinen-text {
+    font-size: 14px;
+  }
+}
+
 .font-sm, .about__title h2 > span, .about__content p, .access-content__ul li, .footer__copy, .sub-title {
   font-size: 14px;
 }
@@ -265,6 +274,7 @@ img {
   font-weight: bold;
   letter-spacing: 0.1em;
   z-index: 2;
+  display: none;
 }
 .hero__title > span {
   display: block;
@@ -285,6 +295,7 @@ img {
   .hero__title {
     font-size: 26px;
     right: 15%;
+    display: block;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -946,9 +957,12 @@ body {
 .rinen-text {
   color: #0ab39d;
   margin: 0 auto;
-  width: 80%;
-  font-size: 14px;
+  width: 90%;
   line-height: 1.8em;
+  text-align: center;
+}
+.rinen-text span {
+  display: block;
 }
 
 .cosmos .rinen-line {
@@ -1152,14 +1166,6 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
-@media screen and (min-width: 960px) {
-  .institution-table {
-    margin-bottom: 0;
-    width: 100%;
-    padding: 0;
-    border-spacing: 0.5em;
-  }
-}
 .institution-table tbody tr {
   vertical-align: top;
 }
@@ -1170,27 +1176,11 @@ body {
   display: block;
   padding: 5px;
 }
-@media screen and (min-width: 960px) {
-  .institution-table tbody th {
-    width: 20%;
-    display: inline-block;
-    font-size: 11px;
-  }
-}
 .institution-table tbody td {
   text-align: center;
   width: 100%;
   display: block;
   padding: 10px;
-}
-@media screen and (min-width: 960px) {
-  .institution-table tbody td {
-    width: 80%;
-    display: inline-block;
-    padding: 0;
-    text-align: left;
-    padding-left: 10px;
-  }
 }
 
 .institution-ul {
@@ -1226,6 +1216,11 @@ body {
 }
 .access-content__inner {
   padding: 10px 5px;
+}
+.access-content__inner > a {
+  color: white;
+  display: inline-block;
+  width: 100%;
 }
 .access-content__tit {
   border-bottom: 1px dotted white;

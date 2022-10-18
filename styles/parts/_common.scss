@@ -73,6 +73,13 @@ img {
 }
 
 // font
+.font-ssm {
+  font-size: 12px;
+
+  @include mq(lg) {
+    font-size: 14px;
+  }
+}
 .font-sm {
   font-size: 14px;
 
