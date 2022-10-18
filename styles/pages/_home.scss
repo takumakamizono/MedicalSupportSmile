@@ -683,6 +683,11 @@ body {
   border-radius: 5px;
   &__inner {
     padding: 10px 5px;
+    & > a {
+      color: $cWhite;
+      display: inline-block;
+      width: 100%;
+    }
   }
   &__tit {
     border-bottom: 1px dotted $cWhite;
