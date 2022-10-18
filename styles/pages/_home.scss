@@ -372,9 +372,13 @@ body {
   &-text {
     color: $cSmile-color;
     margin: 0 auto;
-    width: 80%;
-    font-size: 14px;
+    width: 90%;
+    @extend .font-ssm;
     line-height: 1.8em;
+    text-align: center;
+    & span {
+      display: block;
+    }
   }
 }
 //秋桜の理念のスタイル
