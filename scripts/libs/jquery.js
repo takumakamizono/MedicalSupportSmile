@@ -80,7 +80,7 @@ $(window).on("load", function () {
 
 //ページ内リンクの位置調整
 $(function () {
-  var headerHight = 20; //ヘッダーの高さを指定しheaderHightに代入
+  var headerHight = 80; //ヘッダーの高さを指定しheaderHightに代入
   $('a[href^="#"]').click(function () {
     //アンカーリンクをクリックでイベント処理
     var href = $(this).attr("href"); //アンカーリンクの属性を取得
