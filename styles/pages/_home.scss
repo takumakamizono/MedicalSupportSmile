@@ -45,11 +45,12 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
+    padding: 0;
   }
   &__li {
     margin-left: 30px;
     border-bottom: 4px $cMainBlue solid;
-    width: 130px;
+    width: 110px;
     &:hover {
       position: relative;
       &::after {
@@ -842,6 +843,7 @@ body {
   &__inner {
     padding: 7px 0;
     @extend .flex3;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     @extend .content-width;
@@ -890,7 +892,7 @@ body {
     @include mq(lg) {
       margin-left: 30px;
       border-bottom: 4px #0073bc solid;
-      width: 130px;
+      width: 110px;
       margin: 0 0 0 30px;
       &:hover {
         position: relative;
