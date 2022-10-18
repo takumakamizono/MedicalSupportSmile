@@ -607,12 +607,12 @@ body {
   background-color: $cWhite;
   padding: 10px;
   border-radius: 5px;
-  @include mq(lg) {
-    margin-bottom: 0;
-    width: 100%;
-    padding: 0;
-    border-spacing: 0.5em;
-  }
+  // @include mq(lg) {
+  //   margin-bottom: 0;
+  //   width: 100%;
+  //   padding: 0;
+  //   border-spacing: 0.5em;
+  // }
   & tbody tr {
     vertical-align: top;
   }
@@ -623,24 +623,24 @@ body {
     width: 100%;
     display: block;
     padding: 5px;
-    @include mq(lg) {
-      width: 20%;
-      display: inline-block;
-      font-size: 11px;
-    }
+    // @include mq(lg) {
+    //   width: 20%;
+    //   display: inline-block;
+    //   font-size: 11px;
+    // }
   }
   & tbody td {
     text-align: center;
     width: 100%;
     display: block;
     padding: 10px;
-    @include mq(lg) {
-      width: 80%;
-      display: inline-block;
-      padding: 0;
-      text-align: left;
-      padding-left: 10px;
-    }
+    // @include mq(lg) {
+    //   width: 80%;
+    //   display: inline-block;
+    //   padding: 0;
+    //   text-align: left;
+    //   padding-left: 10px;
+    // }
   }
 }
 .institution-ul {
