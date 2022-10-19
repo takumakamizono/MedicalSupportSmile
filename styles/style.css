@@ -136,9 +136,19 @@ img {
 .font-ssm, .rinen-text {
   font-size: 12px;
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 420px) {
   .font-ssm, .rinen-text {
-    font-size: 14px;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .font-ssm, .rinen-text {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .font-ssm, .rinen-text {
+    font-size: 17px;
   }
 }
 
@@ -151,11 +161,11 @@ img {
   }
 }
 
-.font-md, .institution__CenterContent {
+.font-md {
   font-size: 17px;
 }
 @media screen and (min-width: 960px) {
-  .font-md, .institution__CenterContent {
+  .font-md {
     font-size: 19px;
   }
 }
@@ -740,9 +750,18 @@ body {
   background-color: rgba(244, 244, 244, 0.9);
   padding: 20px 0;
   flex-basis: 50%;
+  position: relative;
 }
 .institution__UpContent-left .logo {
+  position: relative;
+  top: 19px;
   margin: 0 auto;
+  width: 160px;
+}
+@media screen and (min-width: 600px) {
+  .institution__UpContent-left .logo {
+    width: 180px;
+  }
 }
 .institution__UpContent-left .logo > img {
   margin: 0 auto;
@@ -786,10 +805,12 @@ body {
 }
 .institution__CenterContent {
   padding: 30px 0 30px 0;
+  font-size: 15px;
   font-weight: 600;
 }
 @media screen and (min-width: 600px) {
   .institution__CenterContent {
+    font-size: 18px;
     text-align: center;
     padding: 50px 0 80px 0;
   }
@@ -838,6 +859,18 @@ body {
   width: 50px;
   height: 50px;
   margin-right: 20px;
+  flex-basis: 30%;
+}
+@media screen and (min-width: 480px) {
+  .aozora-ex-up .institution__ex-title {
+    flex-basis: 10%;
+  }
+}
+.aozora-ex-up .institution__ex-title > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .aozora-ex-up-title::before {
   display: none;
@@ -914,7 +947,6 @@ body {
 }
 .company .institution__UpContent-left .logo {
   margin: 0 0 0 7%;
-  width: 200px;
 }
 @media screen and (min-width: 960px) {
   .company .institution__UpContent-left .logo {
@@ -930,7 +962,6 @@ body {
 }
 .rinen-tit {
   position: relative;
-  margin-bottom: 10px;
 }
 .rinen-line {
   position: absolute;
@@ -960,7 +991,12 @@ body {
   border: solid 4px #0ab39d;
   border-radius: 50%;
   top: 0;
-  left: 15%;
+  left: 8%;
+}
+@media screen and (min-width: 1280px) {
+  .rinen-circle {
+    left: 15%;
+  }
 }
 .rinen-circle::before {
   position: absolute;
@@ -982,6 +1018,11 @@ body {
 }
 .rinen-text span {
   display: block;
+}
+@media screen and (min-width: 420px) {
+  .rinen-text span {
+    text-align: center;
+  }
 }
 
 .cosmos .rinen-line {
