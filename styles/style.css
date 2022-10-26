@@ -304,13 +304,26 @@ img {
 @media screen and (min-width: 960px) {
   .hero__title {
     font-size: 26px;
-    right: 15%;
+    right: 11%;
     display: block;
   }
 }
 @media screen and (min-width: 1280px) {
   .hero__title {
+    right: 8%;
     font-size: 30px;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .hero__title {
+    right: 9%;
+    font-size: 33px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .hero__title {
+    right: 14%;
+    font-size: 35px;
   }
 }
 .hero__footer {
