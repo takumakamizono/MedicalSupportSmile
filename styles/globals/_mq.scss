@@ -8,7 +8,11 @@ $breakpoints: (
   // 960px以上のモニタで適用
   "lg": "screen and (min-width: 960px)",
   // 1280px以上のモニタで適用
-  "xl": "screen and (min-width: 1280px)"
+  "xl": "screen and (min-width: 1280px)",
+  // 1680px以上のモニタで適用
+  "xl2": "screen and (min-width: 1680px)",
+  // 1920px以上のモニタで適用
+  "xl3": "screen and (min-width: 1920px)"
 ) !default;
 
 @mixin mq($breakpoint: md) {
