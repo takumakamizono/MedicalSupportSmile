@@ -758,6 +758,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }
 .institution__UpContent-left {
   background-color: rgba(244, 244, 244, 0.9);
